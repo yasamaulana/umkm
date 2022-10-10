@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\Komentar;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class KomentarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $datas = Produk::where('nama_usaha', '!=', '')
-            ->where('nama_pemilik', '!=', '')
-            ->where('alamat', '!=', '')
-            ->where('deskripsi', '!=', '')
-            ->where('gambar1', '!=', '')
-            ->where('gambar2', '!=', '')
-            ->where('gambar3', '!=', '')
-            ->where('gambar4', '!=', '')
-            ->where('gambar5', '!=', '')
-            ->get();
-        return view('home', ["title" => "Home"], compact('datas'));
+        //
     }
 
     /**
@@ -45,7 +35,12 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Komentar();
+        $model->namauser = auth()->user()->nama;
+        $model->idtoko = $request->idtoko;
+        $model->komentar = $request->komentar;
+        $model->save();
+        return back();
     }
 
     /**
@@ -67,7 +62,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        return view('detail', ["title" => "Home"]);
+        //
     }
 
     /**

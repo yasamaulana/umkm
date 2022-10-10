@@ -5,6 +5,7 @@ use App\Http\Controllers\DataumkmController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProdukController;
@@ -38,8 +39,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/detail-barang', [HomeController::class, 'detail']);
 
-//detai
-Route::get('/detail-barang', [DetailController::class, 'index']);
+//detail
+Route::get('/detail-barang/{id}', [DetailController::class, 'index']);
+Route::resource('/komentar', KomentarController::class)->middleware('cekstatus:user,admin');
 
 //tampilan umkm
 Route::get('/umkm', function () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fotoslide;
+use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,9 @@ class ProdukController extends Controller
     public function index()
     {
         $id = Auth::User()->id;
+        $kategori = Kategori::all();
         $produk = Produk::where('idproduk', '=', $id)->get();
-        return view('adminuser/profile', ["title" => "Profile"], compact('produk'));
+        return view('adminuser/profile', ["title" => "Profile"], compact('produk', 'kategori'));
     }
 
     /**

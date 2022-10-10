@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('fontawesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ url('css/home.css') }}">
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('css/detail.css') }}">
+    <link href="{{ url('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- JavaScript Bundle with Popper -->
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('fontawesome/js/all.css') }}"></script>
@@ -19,11 +20,11 @@
     <nav class="navbar navbar-expand-lg bg-white fixed-top shadow">
         <div class="container">
             <i class="fa-solid fa-shop logo"></i>
-            <a class="navbar-brand" href="#">UMKM DESA BATEGEDE</a>
+            <a class="navbar-brand" href="/">UMKM DESA BATEGEDE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 @auth
-                    <img src="img/profile-img.jpg" alt="Profile" width="30px" class="rounded-circle">
+                    <img src="{{ url('img/profile-img.jpg') }}" alt="Profile" width="30px" class="rounded-circle">
                 @else
                     <span <i class="fa-solid fa-ellipsis-vertical"></i></span>
                 @endauth
@@ -41,12 +42,15 @@
                         <a class="nav-link {{ $title == 'Wisata' ? 'active' : '' }}" href="/wisata"><b>WISATA</b></a>
                     </li>
                     @auth
+                        <li class="nav-item">
+                            <a class="nav-link {{ $title == 'Wisata' ? 'active' : '' }}" href="/wisata"><b>Di Ikuti</b></a>
+                        </li>
                         <li class="nav-item dropdown pe-3">
 
                             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                                 data-bs-toggle="dropdown">
-                                <img src="img/profile-img.jpg" alt="Profile" width="37px" style="margin-top: -8px"
-                                    class="rounded-circle">
+                                <img src="{{ url('img/profile-img.jpg') }}" alt="Profile" width="37px"
+                                    style="margin-top: -8px" class="rounded-circle">
                             </a><!-- End Profile Iamge Icon -->
 
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

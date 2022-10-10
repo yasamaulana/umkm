@@ -55,9 +55,12 @@
                                         <div class="col-md-8 col-lg-9">
                                             <select name="kategori" id="" class="form-control" required>
                                                 <option value="" required>- Pilih -</option>
-                                                <option value="Keripik"
-                                                    {{ $value->kategori == 'Keripik' ? 'selected' : '' }} required>
-                                                    Keripik</option>
+                                                @foreach ($kategori as $kate)
+                                                    <option value="{{ $kate->kategori }}"
+                                                        {{ $kate->kategori == $value->kategori ? 'selected' : '' }}>
+                                                        {{ $kate->kategori }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
