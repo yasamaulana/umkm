@@ -58,8 +58,26 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title produk">{{ $isi->nama_usaha }}</h5>
-                                    <p class="card-text produk">{{ $isi->deskripsi }}</p>
-                                    <button class="mx-auto btn btn-primary ps-5 pe-5">Detail</button>
+                                    <div class="d-flex justify-content-center align-item-center">
+                                        <i class="fa-solid fa-heart love"></i>
+                                        <p class="produk">50 follower</p>
+                                    </div>
+                                    <p class="card-text badge bg-primary p-2"><i
+                                            class="fa-solid pe-2 fa-location-dot"></i>{{ $isi->alamat }}</p>
+                                    <div class="d-flex justify-content-center align-item-center">
+                                        @if ($isi->wa)
+                                            <i class="icon fa-brands fa-whatsapp"></i>
+                                        @endif
+                                        @if ($isi->fb)
+                                            <i class="icon fa-brands fa-facebook"></i>
+                                        @endif
+                                        @if ($isi->ig)
+                                            <i class="icon fa-brands fa-instagram"></i>
+                                        @endif
+                                        @if ($isi->tiktok)
+                                            <i class="icon fa-brands fa-tiktok"></i>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>

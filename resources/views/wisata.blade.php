@@ -20,16 +20,31 @@
                                         aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                         aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                        aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                        aria-label="Slide 5"></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/hodie.jpg" class="d-block w-100 gambarwisata" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="2000">
-                                        <img src="img/roti.jpg" class="d-block w-100 gambarwisata" alt="...">
+                                        <img src="{{ url('storage/gambar/' . $isi->gambar1) }}"
+                                            class="d-block w-100 rounded-4 gambarwisata" alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="img/seserahan.jpg" class="d-block w-100 gambarwisata" alt="...">
+                                        <img src="{{ url('storage/gambar/' . $isi->gambar2) }}"
+                                            class="d-block w-100 gambarwisata" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ url('storage/gambar/' . $isi->gambar3) }}"
+                                            class="d-block w-100 rounded-4 gambarwisata" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ url('storage/gambar/' . $isi->gambar4) }}"
+                                            class="d-block w-100 rounded-4 gambarwisata" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ url('storage/gambar/' . $isi->gambar5) }}"
+                                            class="d-block w-100 rounded-4 gambarwisata" alt="...">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"

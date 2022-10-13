@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DataumkmController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\FotoprofileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KomentarController;
@@ -60,6 +61,8 @@ Route::get('/wisata', function () {
 Route::get('/admin-user', function () {
     return view('adminuser/dashboard', ["title" => "Dashboard"]);
 })->middleware('cekstatus:user');
+
+//Route::resource('/ubahfoto_profile', [FotoprofileController::class, 'update'])->middleware('cekstatus:user');
 
 Route::resource('/profile', ProdukController::class)->middleware('cekstatus:user');
 

@@ -49,8 +49,8 @@
 
                             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                                 data-bs-toggle="dropdown">
-                                <img src="{{ url('img/profile-img.jpg') }}" alt="Profile" width="37px"
-                                    style="margin-top: -8px" class="rounded-circle">
+                                <img src="{{ url('storage/fotoprofile/' . auth()->user()->foto) }}" alt="Profile"
+                                    width="37px" style="margin-top: -8px" class="rounded-circle">
                             </a><!-- End Profile Iamge Icon -->
 
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
