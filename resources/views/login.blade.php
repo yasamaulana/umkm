@@ -77,9 +77,4 @@
         </div>
 
     </div>
-    <div class="footer-bottom bg-white fixed-bottom mt-2 shadow">
-        <div class="text-center m-2">
-            Made By Polibang Creative Studio
-        </div>
-    </div>
 @endsection

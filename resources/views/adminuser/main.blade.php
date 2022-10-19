@@ -21,6 +21,7 @@
 
     <!-- Vendor CSS Files -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('fontawesome/css/all.css') }}">
     <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="vendor/quill/quill.snow.css" rel="stylesheet">

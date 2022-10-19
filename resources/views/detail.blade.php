@@ -130,12 +130,30 @@
             <div class="container mt-2 mb-2 d-flex">
                 <img src="{{ url('img/profile-img.jpg') }}" alt="" class="rounded-circle" height="90"
                     width="90">
-                <div class="profile-nama mt-2 ms-3">
+                <div class="profile-nama mt-2 ms-3~">
                     <p class="fw-bold nama">{{ $datas->nama_pemilik }}</p>
-                    <a href="http://wa.me/{{ $datas->wa }}" target="_blank" class="btn btn-primary kontak"><i
-                            class="fa-brands fa-whatsapp me-1"></i>Chat Penjual</a>
-                    <a href="http://wa.me/{{ $datas->wa }}" target="_blank" class="btn btn-danger kontak"><i
-                            class="fa-regular fa-heart me-1"></i>Ikuti</a>
+                    <div class="d-flex ms-1">
+                        <a href="http://wa.me/{{ $datas->wa }}" target="_blank"
+                            class="btn me-1 btn-primary kontak"><i class="fa-brands fa-whatsapp me-1"></i>Chat Penjual</a>
+                        @auth
+                            @forelse ($follow as $ikuti)
+                                <form action="{{ url('/follow/' . $ikuti->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger kontak"><i
+                                            class="fa-regular fa-heart me-1"></i>Berhenti Mengikuti</button>
+                                </form>
+                            @empty
+                                <form action="{{ url('/follow') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="idtoko" value="{{ $datas->id }}">
+                                    <button type="submit" class="btn btn-danger kontak"><i
+                                            class="fa-regular fa-heart me-1"></i>Ikuti</button>
+                                </form>
+                            @endforelse
+                        @else
+                        @endauth
+                    </div>
                 </div>
             </div>
         </div>
@@ -219,10 +237,4 @@
         </div>
     </div>
     <!-- end modal -->
-
-    <div class="footer-bottom bg-white mt-3 shadow">
-        <div class="text-center">
-            Made By Polibang Creative Studio
-        </div>
-    </div>
 @endsection

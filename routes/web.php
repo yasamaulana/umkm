@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DataumkmController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\FotoprofileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileumkmController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SosmedController;
+use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\UsersettingController;
 use App\Http\Controllers\WisataController;
 use App\Models\Produk;
@@ -43,19 +45,17 @@ Route::get('/detail-barang', [HomeController::class, 'detail']);
 //detail
 Route::get('/detail-barang/{id}', [DetailController::class, 'index']);
 Route::resource('/komentar', KomentarController::class)->middleware('cekstatus:user,admin');
+Route::resource('/follow', FollowerController::class)->middleware('cekstatus:user,admin');
 
 //tampilan umkm
-Route::get('/umkm', function () {
-    $datas = Produk::all();
-    return view('umkm', ["title" => "UMKM"], compact('datas'));
-});
+Route::get('/umkm', [UmkmController::class, 'index']);
+Route::get('/umkm/cari', [UmkmController::class, 'cari']);
 
 //tampilan wisata
 Route::get('/wisata', function () {
     $datas = Wisata::all();
     return view('wisata', ["title" => "Wisata"], compact('datas'));
 });
-
 
 //admin user
 Route::get('/admin-user', function () {

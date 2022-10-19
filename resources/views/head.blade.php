@@ -105,6 +105,92 @@
         </div>
     </nav>
     @yield('isi')
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-white mt-5">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Hubungi kami dalam sosial media :</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.instagram.com/pcspolibang/" target="_blank" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/pcspolibang/" target="_blank" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <section>
+            <div class="d-flex justify-content-center align-item-center">
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ url('img/pcs-logo.png') }}" alt="" height="45vh" class="m-4">
+                    </div>
+                    <div class="col">
+                        <img src="{{ url('img/logo-polibang.png') }}" alt="" height="45vh" class="m-4">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <img src="{{ url('img/pcs-small.png') }}" width="25px" class="mb-1" alt="">
+                            Polibang
+                            Creative Studio
+                        </h6>
+                        <p>
+                            Kami merupakan unit kegiatan yang berfokus pada pengembangan aplikasi, Multimedia, Jaringan
+                            Komputer dan Digital Marketing
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-5 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Informasi Developer</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i>Balekambang Jepara</p>
+                        <p class="d-flex">
+                            <i class="fas fa-envelope me-3 mt-1 text-secondary"></i>
+                            polibangcreativestudio@gmail.com
+                        </p>
+                    </div> <!-- Grid column -->
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold text-decoration-none" href="#">Polibang Creative
+                Studio</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>

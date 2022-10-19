@@ -2,14 +2,15 @@
 
 @section('isi')
     <div class="container">
-        <form class="d-flex mb-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex mb-2" action="{{ url('/umkm/cari') }}" method="GET" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="cari"
+                value="{{ old('cari') }}">
             <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
         <div class="row row-cols-1 row-cols-md-2 g-4">
             @foreach ($datas as $isi)
                 <div class="col">
-                    <a href="" class="link-kotak">
+                    <a href="{{ url('/detail-barang/' . $isi->id) }}" class="link-kotak">
                         <div class="card mb-3" style="max-width:;">
                             <div class="row g-0">
                                 <div class="col-md-4">
@@ -96,11 +97,6 @@
                     </a>
                 </div>
             @endforeach
-        </div>
-    </div>
-    <div class="footer-bottom bg-white fixed-bottom mt-2 shadow">
-        <div class="text-center m-2">
-            Made By Polibang Creative Studio
         </div>
     </div>
 @endsection

@@ -21,9 +21,27 @@
 
                             <img src="{{ url('storage/fotoprofile/' . auth()->user()->foto) }}" alt="Profile"
                                 class="rounded-circle">
-                            <button class="btn btn-primary"><i class="fa-solid fa-house"></i></button>
+                            <button class="btn btn-primary mt-2" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"><i class="fa-solid fa-upload me-2"></i>Ganti
+                                Gambar</button>
                             <h2>{{ auth()->user()->nama }}</h2>
                             <h3>Penjual</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="mx-auto">
+                                    <img src="{{ url('storage/fotoprofile/' . auth()->user()->foto) }}"
+                                        class="rounded-circle img-preview1 m-3" width="250">
+                                    <input type="file" name="fotoprofile" class="form-control mb-2" id="gambar1"
+                                        onchange="PreviewImage1()">
+                                    <button class="btn btn-primary" type="submit">Ganti</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

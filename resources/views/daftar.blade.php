@@ -130,9 +130,4 @@
         </div>
 
     </div>
-    <div class="footer-bottom bg-white mt-2 shadow">
-        <div class="text-center">
-            Made By Polibang Creative Studio
-        </div>
-    </div>
 @endsection

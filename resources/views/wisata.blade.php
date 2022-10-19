@@ -64,7 +64,7 @@
                         <div class="card h-100">
                             <div class="align-items-center justify-content-center d-flex m-1">
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/embed/ImCPCA940J0" frameborder="0"></iframe>
+                                    <iframe src="{{ $isi->yt }}" frameborder="0"></iframe>
                                 </div>
                             </div>
                             <h4 class="fw-bold mt-2 text-center">Informasi Youtube</h4>
@@ -89,10 +89,5 @@
                 </div>
             </div>
         @endforeach
-    </div>
-    <div class="footer-bottom bg-white mt-2 shadow">
-        <div class="text-center">
-            Made By Polibang Creative Studio
-        </div>
     </div>
 @endsection
